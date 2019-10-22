@@ -34,7 +34,7 @@
  */
 #define PROS_USE_LITERALS
 
-//#include "api.h"
+#include "api.h"
 /**
  * You should add more #includes here
  */
@@ -42,6 +42,7 @@
 #include "pros\apix.h"
 //#include "pros/api_legacy.h"
 #include "globals.hpp"
+#include "gui.h"
 /**
  * If you find doing pros::Motor() to be tedious and you'd prefer just to do
  * Motor, you can use the namespace with the following commented out line.

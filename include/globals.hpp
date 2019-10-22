@@ -1,4 +1,5 @@
 #pragma once
+#include "okapi/api.hpp"
 //red start 1 preset prototypes
 void autonr1();
 void autonr2();
@@ -32,7 +33,19 @@ void autonb12();
 //no preset
 void noauton();
 
-//lvgl
-void lvgldefs();
+//deploy
+void deploy();
 
 extern int autonpreset;
+
+//okapi
+//extern const auto &ref1;
+//extern okapi::MotorGroup left_drive;
+//extern okapi::MotorGroup right_drive;
+extern okapi::MotorGroup intakes;
+//extern okapi::Motor li;
+//extern okapi::Motor ri;
+extern okapi::Motor a;
+extern okapi::Motor t;
+extern bool arcade;
+
