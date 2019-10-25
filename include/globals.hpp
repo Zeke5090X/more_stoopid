@@ -33,6 +33,8 @@ void autonb12();
 //no preset
 void noauton();
 
+void TAP();
+
 //deploy
 void deploy();
 
@@ -43,6 +45,7 @@ extern int autonpreset;
 //extern okapi::MotorGroup left_drive;
 //extern okapi::MotorGroup right_drive;
 extern okapi::MotorGroup intakes;
+extern pros::Controller slave;
 //extern okapi::Motor li;
 //extern okapi::Motor ri;
 extern okapi::Motor a;

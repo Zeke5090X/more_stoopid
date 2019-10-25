@@ -3,7 +3,7 @@ using namespace okapi;
 auto chassis2 = ChassisControllerFactory::create(
 {1, 2}, {-3, -4},
 AbstractMotor::gearset::green,
-{4_in, 15_in}
+{4.1_in, 15_in}
 );
 void autonr2()
 {

@@ -9,7 +9,7 @@ auto drive = ChassisControllerFactory::create(
 left_drive, 
 right_drive,
 AbstractMotor::gearset::green,
-{4_in, 15_in}
+{4.1_in, 15_in}
 );
 //const auto &ref1 = drive;
 /*Motor li(15,
@@ -37,7 +37,7 @@ ControllerButton armdown = masterController[ControllerDigital::down];
 ControllerButton tiltforward = masterController[ControllerDigital::right];
 ControllerButton tiltback = masterController[ControllerDigital::left];
 bool arcade = false;
-int autonpreset = 2;
+//int autonpreset = -1;
 /**
  * Runs initialization code. This occurs as soon as the program is started.
  *
@@ -50,7 +50,7 @@ void initialize()
 	//gui();
 	left_drive.setBrakeMode(AbstractMotor::brakeMode::coast);
 	right_drive.setBrakeMode(AbstractMotor::brakeMode::coast);
-	a.setBrakeMode(AbstractMotor::brakeMode::hold);
+	a.setBrakeMode(AbstractMotor::brakeMode::brake);
 	intakes.setGearing(AbstractMotor::gearset::red);
 	masterController.setText(2, 7, "Zeke is dum");
 }
@@ -60,7 +60,10 @@ void initialize()
  * the VEX Competition Switch, following either autonomous or opcontrol. When
  * the robot is enabled, this task will exit.
  */
-void disabled() {}
+void disabled() 
+{
+	//TAP();
+}
 
 /**
  * Runs after initialize(), and before autonomous when connected to the Field
@@ -86,14 +89,21 @@ void competition_initialize() {}
  */
 void autonomous() 
 {
-	if (autonpreset==0){}
-	else if(autonpreset==1)
+	if(autonpreset==1)
 	{
 		autonr1();
 	}
 	else if(autonpreset==2)
 	{
 		autonr2();
+	}
+	else if(autonpreset==-1)
+	{
+		autonb1();
+	}
+	else if(autonpreset==-2)
+	{
+		autonb2();
 	}
 	else{}
 	
@@ -222,7 +232,7 @@ void opcontrol() {
 		{
 			a.moveVelocity(0);
 		}
-		
+		TAP();
 		pros::delay(20);
 	}
 }
